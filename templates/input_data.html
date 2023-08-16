@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title %} Input data {% endblock title %} {%
+block main %}
+<form method="post" action="{{ url_for('input_data') }}">
+    {{ form.hidden_tag() }}
+
+    {{ form.nama.label() }} {{ form.nama() }}
+    {% if form.nama.errors %}
+        {% for err in errors %}
+            <p>{{ err }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {{ form.email.label() }} {{ form.email() }}
+    {% if form.email.errors %}
+        {% for err in errors %}
+            <p>{{ err }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {{ form.jurusan.label() }} {{ form.jurusan() }}
+    {% if form.jurusan.errors %}
+       {% for err in errors %}
+        <p>{{ err }}</p>
+       {% endfor %} 
+    {% endif %}
+
+    {{ form.submit(class='btn btn-primary') }}
+</form>
+{% endblock main %}

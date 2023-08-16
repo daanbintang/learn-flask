@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %} Data Siswa {% endblock title %} {%
+block main %}
+<div class="overflow-x-auto container mx-auto">
+    <table class="table">
+        <!-- head -->
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Jurusan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in datas %}
+                <tr class="bg-base-300">
+                    <td>1</td>
+                    <td>{{ data.nama }}</td>
+                    <td>{{ data.email }}</td>
+                    <td>{{ data.jurusan }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock main %}
